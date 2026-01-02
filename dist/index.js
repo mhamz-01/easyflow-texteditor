@@ -32,6 +32,47 @@ var index_exports = {};
 __export(index_exports, {
   Editor: () => Editor,
   EditorBridgeProvider: () => EditorBridgeProvider,
+  FONT_OPTIONS: () => FONT_OPTIONS,
+  GRADIENT_ROWS_70: () => GRADIENT_ROWS_70,
+  barlow: () => barlow,
+  bebas: () => bebas,
+  cabin: () => cabin,
+  cn: () => cn,
+  dancing: () => dancing,
+  fileToBase64: () => fileToBase64,
+  fira: () => fira,
+  inconsolata: () => inconsolata,
+  inter: () => inter,
+  josefin: () => josefin,
+  kanit: () => kanit,
+  lato: () => lato,
+  librebask: () => librebask,
+  loadActiveTab: () => loadActiveTab,
+  loadImageBase64: () => loadImageBase64,
+  loadTabs: () => loadTabs,
+  manrope: () => manrope,
+  merriweather: () => merriweather,
+  montserrat: () => montserrat,
+  mulish: () => mulish,
+  notoserif: () => notoserif,
+  nunito: () => nunito,
+  opensans: () => opensans,
+  oswald: () => oswald,
+  philosopher: () => philosopher,
+  playfair: () => playfair,
+  poppins: () => poppins,
+  ptsans: () => ptsans,
+  quicksand: () => quicksand,
+  raleway: () => raleway,
+  roboto: () => roboto,
+  rubik: () => rubik,
+  saveActiveTab: () => saveActiveTab,
+  saveImageBase64: () => saveImageBase64,
+  saveTabs: () => saveTabs,
+  sourceserif: () => sourceserif,
+  spacegrotesk: () => spacegrotesk,
+  teko: () => teko,
+  ubuntu: () => ubuntu,
   useBodyRect: () => useBodyRect,
   useComposedRef: () => useComposedRef,
   useCursorVisibility: () => useCursorVisibility,
@@ -45,7 +86,8 @@ __export(index_exports, {
   useThrottledCallback: () => useThrottledCallback,
   useTiptapEditor: () => useTiptapEditor,
   useUnmount: () => useUnmount,
-  useWindowSize: () => useWindowSize
+  useWindowSize: () => useWindowSize,
+  worksans: () => worksans
 });
 module.exports = __toCommonJS(index_exports);
 
@@ -990,6 +1032,7 @@ function useEditorBridge() {
 
 // src/lib/editorStorage.ts
 var STORAGE_KEY = "tiptap-tabs-v1";
+var ACTIVE_TAB_KEY = "tiptap-active-tab";
 function loadTabs() {
   if (typeof window === "undefined") return [];
   try {
@@ -1005,6 +1048,14 @@ function loadTabs() {
 function saveTabs(tabs) {
   if (typeof window === "undefined") return;
   localStorage.setItem(STORAGE_KEY, JSON.stringify(tabs));
+}
+function loadActiveTab() {
+  if (typeof window === "undefined") return "1";
+  return localStorage.getItem(ACTIVE_TAB_KEY) ?? "1";
+}
+function saveActiveTab(id) {
+  if (typeof window === "undefined") return;
+  localStorage.setItem(ACTIVE_TAB_KEY, id);
 }
 
 // src/components/editorLayout/editorLayout.tsx
@@ -6694,39 +6745,102 @@ var import_react79 = require("@tiptap/react");
 var import_react80 = require("react");
 
 // src/lib/font.ts
+var import_google = require("next/font/google");
+var inter = (0, import_google.Inter)({ subsets: ["latin"] });
+var roboto = (0, import_google.Roboto)({ subsets: ["latin"] });
+var opensans = (0, import_google.Open_Sans)({ subsets: ["latin"] });
+var poppins = (0, import_google.Poppins)({
+  subsets: ["latin"],
+  weight: "100"
+});
+var montserrat = (0, import_google.Montserrat)({ subsets: ["latin"] });
+var lato = (0, import_google.Lato)({
+  subsets: ["latin"],
+  weight: "100"
+});
+var oswald = (0, import_google.Oswald)({ subsets: ["latin"] });
+var raleway = (0, import_google.Raleway)({ subsets: ["latin"] });
+var merriweather = (0, import_google.Merriweather)({ subsets: ["latin"] });
+var playfair = (0, import_google.Playfair_Display)({ subsets: ["latin"] });
+var ubuntu = (0, import_google.Ubuntu)({
+  subsets: ["latin"],
+  weight: "300"
+});
+var ptsans = (0, import_google.PT_Sans)({
+  subsets: ["latin"],
+  weight: "400"
+});
+var barlow = (0, import_google.Barlow)({
+  subsets: ["latin"],
+  weight: "100"
+});
+var fira = (0, import_google.Fira_Sans)({
+  subsets: ["latin"],
+  weight: "100"
+});
+var nunito = (0, import_google.Nunito)({ subsets: ["latin"] });
+var cabin = (0, import_google.Cabin)({ subsets: ["latin"] });
+var bebas = (0, import_google.Bebas_Neue)({
+  subsets: ["latin"],
+  weight: "400"
+});
+var sourceserif = (0, import_google.Source_Serif_4)({ subsets: ["latin"] });
+var librebask = (0, import_google.Libre_Baskerville)({
+  subsets: ["latin"],
+  weight: "400"
+});
+var rubik = (0, import_google.Rubik)({ subsets: ["latin"] });
+var inconsolata = (0, import_google.Inconsolata)({ subsets: ["latin"] });
+var worksans = (0, import_google.Work_Sans)({ subsets: ["latin"] });
+var mulish = (0, import_google.Mulish)({ subsets: ["latin"] });
+var quicksand = (0, import_google.Quicksand)({ subsets: ["latin"] });
+var kanit = (0, import_google.Kanit)({
+  subsets: ["latin"],
+  weight: "100"
+});
+var teko = (0, import_google.Teko)({ subsets: ["latin"] });
+var josefin = (0, import_google.Josefin_Sans)({ subsets: ["latin"] });
+var philosopher = (0, import_google.Philosopher)({
+  subsets: ["latin"],
+  weight: "400"
+});
+var dancing = (0, import_google.Dancing_Script)({ subsets: ["latin"] });
+var notoserif = (0, import_google.Noto_Serif)({ subsets: ["latin"] });
+var manrope = (0, import_google.Manrope)({ subsets: ["latin"] });
+var spacegrotesk = (0, import_google.Space_Grotesk)({ subsets: ["latin"] });
 var FONT_OPTIONS = [
-  { label: "Inter", value: "Inter, sans-serif" },
-  { label: "Roboto", value: "Roboto, sans-serif" },
-  { label: "Open Sans", value: "Open Sans, sans-serif" },
-  { label: "Poppins", value: "Poppins, sans-serif" },
-  { label: "Montserrat", value: "Montserrat, sans-serif" },
-  { label: "Lato", value: "Lato, sans-serif" },
-  { label: "Oswald", value: "Oswald, sans-serif" },
-  { label: "Raleway", value: "Raleway, sans-serif" },
-  { label: "Merriweather", value: "Merriweather, sans-serif" },
-  { label: "Playfair Display", value: "Playfair, sans-serif" },
-  { label: "Ubuntu", value: "Ubuntu, sans-serif" },
-  { label: "PT Sans", value: "PT Sans, sans-serif" },
-  { label: "Barlow", value: "Barlow, sans-serif" },
-  { label: "Fira Sans", value: "Fira Sans, sans-serif" },
-  { label: "Nunito", value: "Nunito, sans-serif" },
-  { label: "Cabin", value: "Cabin, sans-serif" },
-  { label: "Bebas Neue", value: "Bebas Neunu, sans-serif" },
-  { label: "Source Serif Pro", value: "Source Serif Pro, sans-serif" },
-  { label: "Libre Baskerville", value: "Libre Baskerville, sans-serif" },
-  { label: "Rubik", value: "Rubik, sans-serif" },
-  { label: "Inconsolata", value: "Inconsolata, sans-serif" },
-  { label: "Work Sans", value: "Work Sans, sans-serif" },
-  { label: "Mulish", value: "Mulish, sans-serif" },
-  { label: "Quicksand", value: "Quicksand, sans-serif" },
-  { label: "Kanit", value: "Kanit, sans-serif" },
-  { label: "Teko", value: "Teko, sans-serif" },
-  { label: "Josefin Sans", value: "Josefin Sans, sans-serif" },
-  { label: "Philosopher", value: "Philosopher, sans-serif" },
-  { label: "Dancing Script", value: "Dancing Script, sans-serif" },
-  { label: "Noto Serif", value: "Noto Serif, sans-serif" },
-  { label: "Manrope", value: "Manrope, sans-serif" },
-  { label: "Space Grotesk", value: "Space Grotesk, sans-serif" }
+  { label: "Inter", font: inter },
+  { label: "Roboto", font: roboto },
+  { label: "Open Sans", font: opensans },
+  { label: "Poppins", font: poppins },
+  { label: "Montserrat", font: montserrat },
+  { label: "Lato", font: lato },
+  { label: "Oswald", font: oswald },
+  { label: "Raleway", font: raleway },
+  { label: "Merriweather", font: merriweather },
+  { label: "Playfair Display", font: playfair },
+  { label: "Ubuntu", font: ubuntu },
+  { label: "PT Sans", font: ptsans },
+  { label: "Barlow", font: barlow },
+  { label: "Fira Sans", font: fira },
+  { label: "Nunito", font: nunito },
+  { label: "Cabin", font: cabin },
+  { label: "Bebas Neue", font: bebas },
+  { label: "Source Serif Pro", font: sourceserif },
+  { label: "Libre Baskerville", font: librebask },
+  { label: "Rubik", font: rubik },
+  { label: "Inconsolata", font: inconsolata },
+  { label: "Work Sans", font: worksans },
+  { label: "Mulish", font: mulish },
+  { label: "Quicksand", font: quicksand },
+  { label: "Kanit", font: kanit },
+  { label: "Teko", font: teko },
+  { label: "Josefin Sans", font: josefin },
+  { label: "Philosopher", font: philosopher },
+  { label: "Dancing Script", font: dancing },
+  { label: "Noto Serif", font: notoserif },
+  { label: "Manrope", font: manrope },
+  { label: "Space Grotesk", font: spacegrotesk }
 ];
 
 // src/components/tiptap-ui/font-family-dropdown/font-family-dropdown.tsx
@@ -6946,14 +7060,14 @@ function FontFamilyDropdown() {
                 },
                 "default"
               ),
-              FONT_OPTIONS.map(({ label, value }) => /* @__PURE__ */ (0, import_jsx_runtime71.jsx)(
+              FONT_OPTIONS.map(({ label, font }) => /* @__PURE__ */ (0, import_jsx_runtime71.jsx)(
                 CommandItem,
                 {
                   onSelect: () => {
-                    applyFont(value);
+                    applyFont(label);
                     setOpen(false);
                   },
-                  style: { fontFamily: value },
+                  style: { fontFamily: font.style.fontFamily },
                   children: label
                 },
                 label
@@ -7800,10 +7914,67 @@ function useScrolling(target, options = {}) {
   }, [target, debounce2, fallbackToDocument, isScrolling]);
   return isScrolling;
 }
+
+// src/lib/local-image.ts
+function fileToBase64(file) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = () => resolve(reader.result);
+    reader.onerror = (error) => reject(error);
+  });
+}
+function saveImageBase64(key, base64) {
+  localStorage.setItem(key, base64);
+}
+function loadImageBase64(key) {
+  return localStorage.getItem(key);
+}
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {
   Editor,
   EditorBridgeProvider,
+  FONT_OPTIONS,
+  GRADIENT_ROWS_70,
+  barlow,
+  bebas,
+  cabin,
+  cn,
+  dancing,
+  fileToBase64,
+  fira,
+  inconsolata,
+  inter,
+  josefin,
+  kanit,
+  lato,
+  librebask,
+  loadActiveTab,
+  loadImageBase64,
+  loadTabs,
+  manrope,
+  merriweather,
+  montserrat,
+  mulish,
+  notoserif,
+  nunito,
+  opensans,
+  oswald,
+  philosopher,
+  playfair,
+  poppins,
+  ptsans,
+  quicksand,
+  raleway,
+  roboto,
+  rubik,
+  saveActiveTab,
+  saveImageBase64,
+  saveTabs,
+  sourceserif,
+  spacegrotesk,
+  teko,
+  ubuntu,
   useBodyRect,
   useComposedRef,
   useCursorVisibility,
@@ -7817,6 +7988,7 @@ function useScrolling(target, options = {}) {
   useThrottledCallback,
   useTiptapEditor,
   useUnmount,
-  useWindowSize
+  useWindowSize,
+  worksans
 });
 //# sourceMappingURL=index.js.map

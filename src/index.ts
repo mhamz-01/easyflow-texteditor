@@ -10,6 +10,7 @@ export type {
 // Export hooks / context
 export * from './hooks'
 export * from './contexts'
+export * from './lib'
 export * from "./types/editor-payload"
 
 

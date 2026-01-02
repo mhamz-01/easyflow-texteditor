@@ -3,22 +3,24 @@ import { Editor as Editor$1 } from '@tiptap/react';
 import * as react from 'react';
 import react__default, { RefObject } from 'react';
 import { Editor as Editor$2 } from '@tiptap/core';
+import * as next_dist_compiled__next_font from 'next/dist/compiled/@next/font';
+import { ClassValue } from 'clsx';
 
-interface EditorSubTab {
+interface EditorSubTab$1 {
     id: string;
     title: string;
     content: any | null;
 }
-interface EditorTab {
+interface EditorTab$1 {
     id: string;
     title: string;
     content: any | null;
-    subtabs: EditorSubTab[];
+    subtabs: EditorSubTab$1[];
 }
 
 type EditorChangeSource = "editor" | "tab-switch" | "subtab-switch" | "add-tab" | "add-subtab" | "delete-tab" | "delete-subtab" | "restore" | "storage" | "manual";
 interface EditorChangePayload {
-    tabs: EditorTab[];
+    tabs: EditorTab$1[];
     activeTabId: string;
     activeSubTabId: string | null;
     source: EditorChangeSource;
@@ -248,4 +250,68 @@ declare function EditorBridgeProvider({ children, value, }: {
 }): react_jsx_runtime.JSX.Element;
 declare function useEditorBridge(): EditorBridgeValue;
 
-export { type CursorVisibilityOptions, Editor, EditorBridgeProvider, type EditorBridgeValue, type EditorChangePayload, type EditorChangeSource, type ElementRectOptions, type RectState, type WindowSizeState, useBodyRect, useComposedRef, useCursorVisibility, useEditorBridge, useElementRect, useIsBreakpoint, useIsMobile, useMenuNavigation, useRefRect, useScrolling, useThrottledCallback, useTiptapEditor, useUnmount, useWindowSize };
+declare const GRADIENT_ROWS_70: string[];
+
+type TabContent$1 = any | null;
+interface EditorSubTab {
+    id: string;
+    title: string;
+    content: TabContent$1;
+}
+interface EditorTab {
+    id: string;
+    title: string;
+    content: TabContent$1;
+    subtabs: EditorSubTab[];
+}
+
+type TabContent = any;
+declare function loadTabs(): EditorTab[];
+declare function saveTabs(tabs: EditorTab[]): void;
+declare function loadActiveTab(): string;
+declare function saveActiveTab(id: string): void;
+
+declare const inter: next_dist_compiled__next_font.NextFont;
+declare const roboto: next_dist_compiled__next_font.NextFont;
+declare const opensans: next_dist_compiled__next_font.NextFont;
+declare const poppins: next_dist_compiled__next_font.NextFont;
+declare const montserrat: next_dist_compiled__next_font.NextFont;
+declare const lato: next_dist_compiled__next_font.NextFont;
+declare const oswald: next_dist_compiled__next_font.NextFont;
+declare const raleway: next_dist_compiled__next_font.NextFont;
+declare const merriweather: next_dist_compiled__next_font.NextFont;
+declare const playfair: next_dist_compiled__next_font.NextFont;
+declare const ubuntu: next_dist_compiled__next_font.NextFont;
+declare const ptsans: next_dist_compiled__next_font.NextFont;
+declare const barlow: next_dist_compiled__next_font.NextFont;
+declare const fira: next_dist_compiled__next_font.NextFont;
+declare const nunito: next_dist_compiled__next_font.NextFont;
+declare const cabin: next_dist_compiled__next_font.NextFont;
+declare const bebas: next_dist_compiled__next_font.NextFont;
+declare const sourceserif: next_dist_compiled__next_font.NextFont;
+declare const librebask: next_dist_compiled__next_font.NextFont;
+declare const rubik: next_dist_compiled__next_font.NextFont;
+declare const inconsolata: next_dist_compiled__next_font.NextFont;
+declare const worksans: next_dist_compiled__next_font.NextFont;
+declare const mulish: next_dist_compiled__next_font.NextFont;
+declare const quicksand: next_dist_compiled__next_font.NextFont;
+declare const kanit: next_dist_compiled__next_font.NextFont;
+declare const teko: next_dist_compiled__next_font.NextFont;
+declare const josefin: next_dist_compiled__next_font.NextFont;
+declare const philosopher: next_dist_compiled__next_font.NextFont;
+declare const dancing: next_dist_compiled__next_font.NextFont;
+declare const notoserif: next_dist_compiled__next_font.NextFont;
+declare const manrope: next_dist_compiled__next_font.NextFont;
+declare const spacegrotesk: next_dist_compiled__next_font.NextFont;
+declare const FONT_OPTIONS: {
+    label: string;
+    font: next_dist_compiled__next_font.NextFont;
+}[];
+
+declare function fileToBase64(file: File): Promise<string>;
+declare function saveImageBase64(key: string, base64: string): void;
+declare function loadImageBase64(key: string): string | null;
+
+declare function cn(...inputs: ClassValue[]): string;
+
+export { type CursorVisibilityOptions, Editor, EditorBridgeProvider, type EditorBridgeValue, type EditorChangePayload, type EditorChangeSource, type ElementRectOptions, FONT_OPTIONS, GRADIENT_ROWS_70, type RectState, type TabContent, type WindowSizeState, barlow, bebas, cabin, cn, dancing, fileToBase64, fira, inconsolata, inter, josefin, kanit, lato, librebask, loadActiveTab, loadImageBase64, loadTabs, manrope, merriweather, montserrat, mulish, notoserif, nunito, opensans, oswald, philosopher, playfair, poppins, ptsans, quicksand, raleway, roboto, rubik, saveActiveTab, saveImageBase64, saveTabs, sourceserif, spacegrotesk, teko, ubuntu, useBodyRect, useComposedRef, useCursorVisibility, useEditorBridge, useElementRect, useIsBreakpoint, useIsMobile, useMenuNavigation, useRefRect, useScrolling, useThrottledCallback, useTiptapEditor, useUnmount, useWindowSize, worksans };
