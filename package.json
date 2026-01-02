@@ -3,12 +3,18 @@
   "version": "0.1.1",
   "private": false,
   "description": "A rich text editor built on Tiptap",
-  "main": "dist/index.cjs",
+  "main": "src/index.ts",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
-    "dist"
-  ],
+  "dist",
+  "src",
+  "package.json",
+  "tsconfig.json",
+  ".bablerc",
+  "README.md"
+]
+  ,
   "sideEffects": [
     "*.css"
   ],
