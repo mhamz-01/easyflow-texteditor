@@ -1,0 +1,22 @@
+{
+  "type": "paragraph",
+  "attrs": {
+    "textAlign": "left"
+  },
+  "content": [
+    {
+      "type": "text",
+      "text": "Get Started...",
+      "marks": [
+        {
+          "type": "textStyle",
+          "attrs": {
+            "color": "#4a4a4a", 
+            "fontFamily": "Inter",
+            "fontSize": "22px"
+          }
+        }
+      ]
+    }
+  ]
+}
