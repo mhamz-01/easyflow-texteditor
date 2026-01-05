@@ -1,19 +1,13 @@
 {
-  "name": "@mhaz.01/easyflow-texteditor",
+  "name": "@mhamz.01/easyflow-texteditor",
   "version": "0.1.1",
   "private": false,
   "description": "A rich text editor built on Tiptap",
-  "main": "src/index.ts",    
-"module": "src/index.ts",    
-"types": "src/index.d.ts",
-  "files": [
-  "dist",
-  "src",
-  "package.json",
-  "tsconfig.json",
-  ".bablerc",
-  "README.md"
-]
+
+"main": "dist/index.cjs",
+"module": "dist/index.js",
+"types": "dist/index.d.ts",
+"files": ["dist"]
   ,
   "sideEffects": [
     "*.css"
@@ -94,8 +88,8 @@
     "typescript": "^5"
   },
   "scripts": {
-    "build:scss": "sass src/styles:dist/styles --no-source-map",
-    "build": "npm run build:scss && tsup"
+    "build:scss": "sass src/styles/index.scss dist/styles.css --no-source-map",
+  "build": "npm run build:scss && tsup"
   },
   "publishConfig": {
     "access": "public"
