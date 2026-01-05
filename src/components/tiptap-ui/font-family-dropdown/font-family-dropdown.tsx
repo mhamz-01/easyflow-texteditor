@@ -114,14 +114,14 @@ export function FontFamilyDropdown() {
                 Default
               </CommandItem>
 
-              {FONT_OPTIONS.map(({ label, font }) => (
+              {FONT_OPTIONS.map(({ label, cssFontFamily }) => (
                 <CommandItem
                   key={label}
                   onSelect={() => {
                     applyFont(label);
                     setOpen(false);
                   }}
-                  style={{ fontFamily: font.style.fontFamily }}
+                  style={{ fontFamily: cssFontFamily}}
                 >
                   {label}
                 </CommandItem>
