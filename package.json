@@ -94,5 +94,14 @@
   },
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "exports": {
+  ".": {
+    "types": "./dist/index.d.ts",
+    "import": "./dist/index.js",
+    "require": "./dist/index.cjs"
+  },
+  "./styles/global.css": "./dist/global.css",
+  "./styles/editor.css": "./dist/editor.css"
+}
 }
