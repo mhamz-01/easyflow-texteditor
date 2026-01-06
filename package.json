@@ -89,7 +89,7 @@
   },
   "scripts": {
     "build:global": "sass src/styles/global.css dist/global.css --no-source-map",
-    "build:editor": "sass src/editor/editor.scss dist/editor.css --no-source-map",
+    "build:editor": "sass src/styles/editor.scss dist/editor.css --no-source-map",
     "build": "npm run build:global && npm run build:editor && tsup"
   },
   "publishConfig": {
@@ -102,6 +102,6 @@
       "require": "./dist/index.cjs"
     },
     "./styles/global.css": "./dist/global.css",
-    "./styles/editor.css": "./dist/editor.css"
+    "./styles/editor.scss": "./dist/editor.css"
   }
 }
