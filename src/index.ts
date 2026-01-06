@@ -15,5 +15,5 @@ export * from "./types/editor-payload"
 import './styles/index.scss'
 import './styles/_variables.scss'
 // Import global CSS
-import './styles/globals.css';
+import './styles/globals.scss';
 export * from './components/editor/editor'
