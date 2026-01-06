@@ -1,6 +1,6 @@
 {
   "name": "@mhamz.01/easyflow-texteditor",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "private": false,
   "description": "A rich text editor built on Tiptap",
   "main": "dist/index.cjs",
