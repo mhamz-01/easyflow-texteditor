@@ -88,8 +88,9 @@
     "typescript": "^5"
   },
   "scripts": {
-    "build:scss": "sass src/styles/index.scss dist/styles.css --no-source-map",
-    "build": "npm run build:scss && tsup"
+   "build:global": "sass src/styles/global.css dist/global.css --no-source-map",
+   "build:editor": "sass src/editor/editor.scss dist/editor.css --no-source-map",
+   "build": "npm run build:global && npm run build:editor && tsup"
   },
   "publishConfig": {
     "access": "public"

@@ -12,8 +12,5 @@ export * from './hooks'
 export * from './contexts'
 export * from './lib'
 export * from "./types/editor-payload"
-import './styles/index.scss'
-import './styles/_variables.scss'
-// Import global CSS
-import './styles/globals.css';
+
 export * from './components/editor/editor'
