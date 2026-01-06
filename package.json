@@ -1,6 +1,6 @@
 {
   "name": "@mhamz.01/easyflow-texteditor",
-  "version": "0.1.21",
+  "version": "0.1.22",
   "private": false,
   "description": "A rich text editor built on Tiptap",
   "main": "dist/index.cjs",
@@ -96,12 +96,12 @@
     "access": "public"
   },
   "exports": {
-  ".": {
-    "types": "./dist/index.d.ts",
-    "import": "./dist/index.js",
-    "require": "./dist/index.cjs"
-  },
-  "./styles/global.css": "./dist/global.css",
-  "./styles/editor.css": "./dist/editor.css"
-}
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./styles/global.css": "./dist/global.css",
+    "./styles/editor.css": "./dist/editor.css"
+  }
 }
