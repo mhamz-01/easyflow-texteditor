@@ -12,7 +12,7 @@ import {
 
 import { AppSidebar } from "../sidebar/EditorSidebar"
 import { EditorBridgeProvider } from "../../contexts/EditorBridge"
-import { loadTabs, saveTabs } from "../../lib/editorStorage"
+// import { loadTabs, saveTabs } from "../../lib/editorStorage"
 
 import type { EditorTab } from "../../components/types/editor-tabs"
 import type { EditorChangePayload, EditorChangeSource } from "../../types/editor-payload"
@@ -20,10 +20,12 @@ import type { EditorChangePayload, EditorChangeSource } from "../../types/editor
 
 interface EditorLayoutProps {
   children: ReactNode
+  initialTabs?:EditorTab[]
   onChange?: (payload: EditorChangePayload) => void
+  onTabsChange?: (tabs: EditorTab[]) => void
 }
 
-export function EditorLayout({ children, onChange }: EditorLayoutProps) {
+export function EditorLayout({ children, onChange, initialTabs, onTabsChange }: EditorLayoutProps) {
   const [editor, setEditor] = useState<Editor | null>(null)
   const [tabs, setTabs] = useState<EditorTab[]>([])
   const [activeTabId, setActiveTabId] = useState("")
@@ -69,23 +71,37 @@ export function EditorLayout({ children, onChange }: EditorLayoutProps) {
   )
    /* ---------------- LOAD ---------------- */
 
-   useEffect(() => {
-    const initialTabs = loadTabs()
 
-    if (initialTabs.length === 0) {
+
+
+
+
+
+   useEffect(() => {
+    if (initialTabs?.length === 0) {
       setTabs([{ id: "1", title: "Tab 1", content: null, subtabs: [] }])
       setActiveTabId("1")
     } else {
-      setTabs(initialTabs)
-      setActiveTabId(initialTabs[0].id)
+      setTabs(initialTabs ?? [])
+      setActiveTabId(initialTabs?.[0]?.id ?? "")
     }
-  }, [])
+  }, [initialTabs])
+
+  
+
+
+
 
   /* ---------------- SAVE TO LOCALSTORAGE ---------------- */
+
+
   useEffect(() => {
-    // Only save to localStorage, don't call onChange here
-    saveTabs(tabs)
-  }, [tabs])
+    onTabsChange?.(tabs)
+  }, [tabs, onTabsChange])
+  
+
+  
+
 
   /* ---------------- HELPERS ---------------- */
   

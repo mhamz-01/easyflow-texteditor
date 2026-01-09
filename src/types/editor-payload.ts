@@ -11,6 +11,7 @@ export type EditorChangeSource =
   | "restore"
   | "storage"
   | "manual"
+  
 
 export interface EditorChangePayload {
   tabs: EditorTab[]
